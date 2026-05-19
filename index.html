@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SESHEN | Premium E-Commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="cart-icon-container" onclick="toggleCart()">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="lotus-logo.png" alt="SESHEN Logo" class="main-logo">
+                <h1 class="brand-name">SESHEN</h1>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home-grid" class="home-grid">
+            <div class="window labels" onclick="navigateTo('labels')"><h2>Labels</h2></div>
+            <div class="window cosmetics" onclick="navigateTo('cosmetics')"><h2>Cosmetics</h2></div>
+            <div class="window accessories" onclick="navigateTo('accessories')"><h2>Accessories</h2></div>
+            <div class="window keychains" onclick="navigateTo('keychains')"><h2>Keychains</h2></div>
+        </section>
+
+        <section id="product-page" class="hidden">
+            <button class="back-btn" onclick="goHome()">← Back to Home</button>
+            <div id="page-content"></div>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <button class="close-cart" onclick="toggleCart()">×</button>
+        <h2>سلة المشتريات</h2>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <p>الإجمالي: <span id="cart-total">0</span> EGP</p>
+            <button class="checkout-btn" onclick="showCheckoutForm()">إتمام الشراء</button>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>بيانات الشحن</h3>
+            <form id="order-form">
+                <input type="text" id="user-name" placeholder="الاسم بالكامل" required>
+                <input type="tel" id="user-phone" placeholder="رقم التليفون" required>
+                <textarea id="user-address" placeholder="العنوان بالتفصيل" required></textarea>
+                <button type="submit" class="confirm-btn">تأكيد الطلب</button>
+                <button type="button" onclick="hideCheckoutForm()" class="cancel-btn">إلغاء</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SESHEN. Professional Elegance.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
